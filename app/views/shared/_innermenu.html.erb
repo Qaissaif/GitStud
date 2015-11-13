@@ -1,0 +1,38 @@
+<div class="navbar navbar-inverse navbar-fixed-top menu-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">GitStud</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <%if action_name!="sign"%>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Assignments</a></li>
+                        <li><a href="#">Repositories</a></li>
+                        <%if @user %>
+                            <%if @user.student_or_instructor_type=="Student"%>
+                            <li><a href="<%=dashboard_student_index_path%>">Dashboard</a>
+                            </li>
+                            <%else%>
+                            <li><a href="<%=dashboard_instructor_index_path%>">Dashboard</a>
+                            </li>
+                            <%end%>
+                        <li><a href="<%= sign_out_main_index_path%>">Sign out <i class="fa fa-sign-out"></i></a></li>
+                        <%else%>
+                        <li><a href="/main/sign">Sign up <i class="fa fa-sign-in"></i></a></li>
+                        <%end%>
+                    </ul>
+                    <%end%>
+                </div> 
+            </div>
+        </div>
+        <style>
+        body{
+            margin-top: 100px;
+        }
+        </style>

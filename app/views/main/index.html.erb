@@ -1,0 +1,201 @@
+<!-- Top content -->
+        <div id="home" class="parallax top-content" data-stellar-background-ratio="0.3">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+
+			<div class="col-md-7 col-sm-7 top-description">
+				
+				<h2 class="text-left">
+				Build Your <strong>Projects</strong> with <strong>GitStud</strong></h2>		
+		<p>Distributed version control system that makes it easy for you to collaborate with your team.</p>
+			</div>
+
+			
+			<div class="col-md-5 col-sm-5">
+				
+				<div class="vertical-registration-form">
+					<h3>Sign in</h3>
+			 <%= form_for(:user, :url => {:controller => 'main', :action => 'sign_in'},:html => {:id => "user"}) do |f| %>
+				<div class="form-group">
+          		<%= f.text_field :username,:class=>"optin-input",
+          		:required=>"true",:placeholder=>"Username" ,:id=>"username"%>
+          		</div>
+
+          		<div class="form-group">
+          		<%= f.password_field :password,:class=>"optin-input" ,:placeholder=>"Password", :required=>"true" ,:id=>"password"%>
+          		</div>
+          		<div class="form-group">
+          		<%= f.submit :SignIn ,:class=>"btn btn-top-white btn-lg" %>
+          		</div> 
+			 <%end%>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+				</div>
+			</div>
+
+        <!-- Features -->
+        <div id="features-section" class="features-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 features">
+	                	<h2 class="section-heading text-center">Features</h2>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-4 features-box1">
+	                	<div class="icon">
+	                		<i class="fa fa-code"></i>
+	                	</div>
+	                    <h4>Code collaboration</h4>
+	                    <p>
+	                    	Approve code review more efficiently with pull requests. Hold discussions right in the source code with inline comments.
+	                    </p>
+	                </div>
+	                <div class="col-sm-4 features-box2">
+	                	<div class="icon">
+	                		<i class="fa fa-dashboard"></i>
+	                	</div>
+	                    <h4>Faster development</h4>
+	                    <p>
+	                    	 nearly all operations are performed locally, giving it a huge speed advantage on centralized systems that constantly have to communicate with a server somewhere.
+	                    </p>
+	                </div>
+	                <div class="col-sm-4 features-box3">
+	                	<div class="icon">
+	                		<i class="fa fa-code-fork"></i>
+	                	</div>
+	                    <h4>Data assurance</h4>
+	                    <p>
+	                    	The data model of Git ensures the cryptographic integrity of every bit of your project. Every file and commit is checksummed and retrieved by its checksum when checked back out.
+	                    </p>
+	                </div>
+	                <div class="col-sm-4 features-box4">
+	                	<div class="icon">
+	                		<i class="fa fa-database"></i>
+	                	</div>
+	                    <h4>Unlimited private repositories</h4>
+	                    <p>
+	                    	Get unlimited private repositories with GitStud. GitStud Cloud is free for teams.
+	                    </p>
+	                </div>
+	                <div class="col-sm-4 features-box5">
+	                	<div class="icon">
+	                		<i class="fa fa-folder-open"></i>
+	                	</div>
+	                    <h4>Less development</h4>
+	                    <p>
+	                    	Work with project collaborators or teams of people to communicate with ease and share the working expirence.
+	                    </p>
+	                </div>
+	                <div class="col-sm-4 features-box6">
+	                	<div class="icon">
+	                		<i class="fa fa-users"></i>
+	                	</div>
+	                    <h4>Easily manage teams</h4>
+	                    <p>
+	                    	With teams, you as an instructor can give your students any assignment that you wish and monitor their collaboration to solve what you gave.
+	                    </p>
+	                </div>
+
+	            </div>
+	        </div>
+        </div>
+        
+        
+        <div id="how-it-works" class="how-it-works-section">
+
+				<div class="container">
+					
+					<h2 class="section-heading text-center">How it Works</h2>
+
+					<div class="hiw-row row">
+
+						
+						<div class="col-sm-6 col-md-3 fadeIn animated done-animation" data-animation="fadeIn">
+							<div class="hiw-item">
+								<img class="hiw-item-picture" src="/assets/hiw-item-1.jpg" alt="">
+								<div class="hiw-item-text">
+									<span class="hiw-item-icon">1</span>
+									<h4 class="hiw-item-title">View Assignments</h4>
+									<p class="hiw-item-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus eu sollicitudin lacus, nec ultricies lorem.</p>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="col-sm-6 col-md-3 fadeIn animated done-animation" data-animation="fadeIn">
+							<div class="hiw-item even">
+								<img class="hiw-item-picture" src="/assets/hiw-item-2.jpg" alt="">
+								<div class="hiw-item-text">
+									<span class="hiw-item-icon">2</span>
+									<h4 class="hiw-item-title">Create Repository</h4>
+									<p class="hiw-item-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus eu sollicitudin lacus, nec ultricies lorem.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="hidden-md hidden-lg clear"></div>
+
+						
+						<div class="col-sm-6 col-md-3 fadeIn animated done-animation" data-animation="fadeIn">
+							<div class="hiw-item">
+								<img class="hiw-item-picture" src="/assets/hiw-item-3.jpg" alt="">
+								<div class="hiw-item-text">
+									<span class="hiw-item-icon">3</span>
+									<h4 class="hiw-item-title">Work locally</h4>
+									<p class="hiw-item-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus eu sollicitudin lacus, nec ultricies lorem.</p>
+								</div>
+							</div>
+						</div>
+
+						
+						<div class="col-sm-6 col-md-3 fadeIn animated done-animation" data-animation="fadeIn">
+							<div class="hiw-item even">
+								<img class="hiw-item-picture" src="/assets/hiw-item-4.jpg" alt="">
+								<div class="hiw-item-text">
+									<span class="hiw-item-icon">4</span>
+									<h4 class="hiw-item-title">Finished!</h4>
+									<p class="hiw-item-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae. Vivamus eu sollicitudin lacus, nec ultricies lorem.</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+<!--
+        <div id="callaction-container" class="parallax callaction-container" data-stellar-background-ratio="0.3">
+            <div class="inner-callaction">
+	        <div class="container">
+            <div class="row">
+    <h4>Quisque aliquam odio eu magna sodales, vel interdum erat suscipit. </br>Mauris ut porttitor tellus.</h4>
+<a href="#home" class="btn btn-top-white btn-lg">Get Your Free Trial</a>
+</div>	
+</div>
+</div>
+</div>
+--!>
+
+	<!-- footer 2 -->
+	<div id="footer2">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+				<div class="copyright">&copy;GitStud
+					<script type="text/javascript">
+						//<![CDATA[
+						var d = new Date()
+						document.write(d.getFullYear())
+						//]]>
+					</script>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
