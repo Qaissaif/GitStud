@@ -1,0 +1,17 @@
+<div class="file">
+	<div class="blob-wrapper data type-ruby">
+		<table class="highlight tab-size js-file-line-container">
+			<tbody>
+				<% counter=1 %>
+				<% total="" %>
+					<% @blob.data.split("\n").each do |x| %>
+
+					 <% total+="<tr><td class='blob-num js-line-number' data-line-number='"+"#{counter}"+"' ></td><td class='blob-code blob-code-inner js-file-line'>#{x}</td></tr>" %>
+
+					 	<% counter+=1 %>
+						<% end %>
+						<%= total.html_safe %>
+			</tbody>
+	</table>
+	</div>
+</div>

@@ -33,12 +33,22 @@ Gitstud::Application.routes.draw do
 
   resources :assignment do
       resources :repository do
-
-  end
+        get "/tree/:ref/*id" =>"tree#show"
+        get "/tree/:ref" =>"tree#show"
+        get "/commits/:ref/*id" =>"commits#index"
+        get "/commits/:ref" =>"commits#index"
+        get "/commit/:id" =>"commits#show"
+                  get(
+            '/blob/:ref/*id',
+            to: 'blob#show',
+            constraints: { id: /.+/, format: false },
+          )
+      end
     collection do
       get :repositories
     end
   end
+
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
