@@ -17,8 +17,12 @@ class CommitsController < ApplicationController
 	end
 
 	def show
+		@html=[]
 		commit_id=params[:id]
 		@commit=Gitlab::Git::Commit.find(@repoistory,commit_id)
+		@commit.diffs.each do |diff|
+			@html << "<div class='jumbotron' style='background-color:transparent;'>"+CodeRay.scan(diff.diff, :diff).html( :css => :class,:line_numbers =>:table)+"</div>"
+		end
 	end
 
 end

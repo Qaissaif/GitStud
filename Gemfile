@@ -5,6 +5,7 @@ gem 'rails', '4.0.8'
 
 gem 'mongoid'
 
+gem 'coderay'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 

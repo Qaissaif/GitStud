@@ -19,7 +19,7 @@ class RepositoryController < ApplicationController
 	end
 
 	def show
-		@tree= Gitlab::Git::Tree.where(@repoistory,"master","")
+		@tree= Gitlab::Git::Tree.where(@repoistory,"current","")
 	end
 
 	def edit

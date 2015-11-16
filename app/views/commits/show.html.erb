@@ -1,3 +1,12 @@
-<% @commit.diffs.each do |x| %>
-	</p><%= x.diff %><p>
-<% end %>
+
+		<div class="source-column">
+
+	<% @html.each do |x| %>
+		<div class="source-column">
+
+		<%= x.html_safe %>
+				</div>
+<br/>
+	<% end %>
+
+</div>
