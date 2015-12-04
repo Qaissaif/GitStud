@@ -1,0 +1,31 @@
+
+<div class="text-center" style="margin-top:70px;">
+  <h1 style="padding-bottom:23px;">create assignment</h1>
+</div>
+
+<div class="Sign_Form col-lg-6 col-lg-offset-3 ">
+<%= form_for(@assignment,:url=>assignment_index_path) do |f|%>
+
+    <%= f.text_field :name,:class=>"form-control", :required=>"true", :placeholder=>"Name" %>
+  <br />
+   <%= f.text_field :description,:class=>"form-control", :required=>"true", :placeholder=>"Description" %>
+  <br />
+   <%= f.text_field :due_date,:class=>"form-control", :required=>"true", :placeholder=>"due_date" %>
+  <br />
+  <%= f.number_field :mark,:class=>"form-control", :required=>"true", :placeholder=>"mark" %>
+  <br />
+  <%= f.number_field :up_to,:class=>"form-control", :required=>"true", :placeholder=>"up_to" %>
+  <br />
+   <%= f.text_field :course_name,:class=>"form-control", :required=>"true", :placeholder=>"course_name" %>
+  <br />
+  <%= f.number_field :course_id,:class=>"form-control", :required=>"true", :placeholder=>"course_id" %>
+  <br />
+
+  <div class="actions text-center">
+    <div style="margin-top:20px;">
+    <%= f.submit :class => "btn btn-success" %>
+    <%= link_to "Cancel" ,request.referer, :class=>"btn btn-info",:style=>"    margin-left: 10px;" %>
+</div>
+  </div>
+<% end %>
+</div>

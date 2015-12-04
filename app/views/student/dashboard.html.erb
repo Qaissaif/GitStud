@@ -1,90 +1,37 @@
-<div class="row">
-<div class="col-md-3">
-<button class="btn btn-block btn-info"><i class="fa fa-plus"></i> Repository</button>
-</div>
-</div>
-
-<div class="row" id="dash_links">
-                    <div class="col-md-3 col-sm-6">
-                      <a href="<%= repositories_student_index_path %>">
-                        <div class="widget-panel widget-style-1 bg-dark">
-                            <i class="fa fa-list-alt"></i> 
-                            <h2 class="m-0 counter"><%=@repositories.count%></h2>
-                            <div>Repositories</div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-        <a href="<%= repositories_student_index_path %>">
-          <div class="widget-panel widget-style-1 bg-light">
-                            <i class="fa fa-list-alt"></i> 
-                            <h2 class="m-0 counter">2</h2>
-                            <div>Assignments</div>
-          </div>
-        </a>
-    </div>
-</div>
-
-
-
-
-
-<style type="text/css">
-
-@media (max-width:768px){
-  .btn-primary{
-    display: block;
-    width: 100%;
-    margin-top: 5px;
-  }
-}
-
-#dash_links a:hover,#dash_links a:focus {text-decoration: none;}
-
-.widget-panel {
-  padding: 20px 25px;
-  border-radius: 4px;
-  color: #fff;
-  position: relative;
-  margin-bottom: 20px;}
-
-.widget-style-1 i {
-  -webkit-transition: all 220ms ease-in-out;
-  -moz-transition: all 220ms ease-in-out;
-  -o-transition: all 220ms ease-in-out;
-  transition: all 220ms ease-in-out;}
-
-  .widget-style-1 i {
-  position: absolute;
-  font-size: 5rem;
-  right: 2rem;
-  bottom: 1rem;
-  color: #edf0f0;}
-
-  .widget-style-1 h2 {
-  font-weight: 600;
-  font-size: 32px;
-}
-.widget-style-1:hover i {
-  -moz-transform: scale(1.4);
-  -webkit-transform: scale(1.4);
-  -o-transform: scale(1.4);
-  transform: scale(1.4);}
-
-.bg-dark {background-color: #202d3b;}
-
-.bg-light {background-color: #502B9B;}
-
-.bg-info {background-color: #4ebcda;}
-
-.bg-success {background-color: #9cc96b;}
-
-.bg-warning {background-color: #ebaa4b;}
-
-.bg-danger {background-color: #f76c51;}
-
-.bg-pink {background-color: rgba(241, 60, 110, 0.8);}
-
-.bg-mint {background-color: #50c7a7;}
-
-</style>
+<div class="panel">
+                      <div class="panel-heading">
+                          <div class="panel-control">
+                              <a class="fa fa-question-circle fa-lg fa-fw unselectable add-tooltip" href="#" data-original-title="<h4 class='text-thin'>Information</h4><p style='width:150px'>This is an information bubble to help the user.</p>" data-html="true" title=""></a>
+                          </div>
+                          <h3 class="panel-title">Assignments</h3>
+                      </div>
+          
+                      <div class="panel-body">
+                          <div class="table-responsive">
+                              <table class="table table-hover">
+                                  <thead>
+                                      <tr>
+                                          <th style="width:6ex">Course_ID</th>
+                                          <th>Name</th>
+                                          <th>Date</th>
+                                          <th class="text-center">Description</th>
+                                          <th class="text-right">Actions</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <%@assignments.each do |ass|%>
+                                      <tr>
+                                          <td><%=ass.course_id%></td>
+                                          <td><%=ass.name%></td>
+                                          <td><%=ass.due_date%></td>
+                                          <td class="text-center"><span class="label label-table label-success"><%=ass.description%></span></td>
+                                          <td class="text-right">
+                                              <a class="btn btn-xs btn-default add-tooltip" data-toggle="tooltip" href="#" data-original-title="Edit" data-container="body"><i class="fa fa-plus"></i></a>
+                                          </td>
+                                      </tr>
+                                      <%end%>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </div>  

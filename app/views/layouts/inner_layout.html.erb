@@ -11,6 +11,7 @@
   <%= stylesheet_link_tag  "owl.carousel" %> 
   <%= stylesheet_link_tag  "owl.theme" %> 
   <%= stylesheet_link_tag  "style" %>
+  <%= stylesheet_link_tag  "nifty.min" %>
 
   <%= javascript_include_tag "bootstrap.min" %>
   <%= javascript_include_tag "jquery-1.10.2.min" %>
@@ -20,6 +21,8 @@
   <%= javascript_include_tag "owl.carousel.min" %>
   <%= javascript_include_tag "retina-1.1.0.min" %>
   <%= javascript_include_tag "script" %>
+  <%= javascript_include_tag "bootbox.min" %>
+
   <%= csrf_meta_tags %>
 
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
@@ -38,5 +41,13 @@
 <%= yield %>
 </div>
 <%= render "shared/flash" %>
+
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 </body>
 </html>
