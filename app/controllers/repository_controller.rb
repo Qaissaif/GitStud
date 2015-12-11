@@ -25,8 +25,8 @@ layout "inner_layout"
 		@current_student.repositories << @repository
 		@assignment.repositories.new
 		if @repository.save! && @current_student.save!
-		system "sudo mkdir /repositories/#{my_project}.git && sudo cd /repositories/#{my_project}.git && sudo git init --bare --share"
-		system "sudo mkdir /first_commit/#{my_project} && sudo cd /first_commit/#{my_project} && sudo touch README.txt && sudo git init && sudo git add . && sudo git commit -m 'Initial commit' && sudo git push origin master"
+		system "sudo mkdir /repositories/#{my_project}.git && cd /repositories/#{my_project}.git && sudo git init --bare --share"
+		system "sudo mkdir /first_commit/#{my_project} && cd /first_commit/#{my_project} && sudo touch README.txt && sudo git init && sudo git add . && sudo git commit -m 'Initial commit' && sudo git push origin master"
 		redirect_to dashboard_student_index_path,:flash => { :success => "Repository created" }
 		end
 	end
