@@ -16,10 +16,16 @@
   <br />
   <%= f.number_field :up_to,:class=>"form-control", :required=>"true", :placeholder=>"up_to" %>
   <br />
-   <%= f.text_field :course_name,:class=>"form-control", :required=>"true", :placeholder=>"course_name" %>
+  <%= f.select :course_name, 
+ [['OS','OS'],
+ ['Network','Network'],
+ ['Software Design','Software Design'],
+ ['Wireless','Wireless'],
+ ['Database','Database'],
+ ['OOP','OOP'],
+  ], {:include_blank=>"-- select course --"},{:class=>"form-control"} %>
   <br />
-  <%= f.number_field :course_id,:class=>"form-control", :required=>"true", :placeholder=>"course_id" %>
-  <br />
+  
 
   <div class="actions text-center">
     <div style="margin-top:20px;">

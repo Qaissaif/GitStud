@@ -13,7 +13,6 @@ class TreeController < ApplicationController
 			path=""
 		end
     @tree= Gitlab::Git::Tree.where(@repository,params[:ref],path)
-
 	end
 
 end

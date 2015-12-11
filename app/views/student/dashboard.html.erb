@@ -11,7 +11,7 @@
                               <table class="table table-hover">
                                   <thead>
                                       <tr>
-                                          <th style="width:6ex">Course_ID</th>
+                                          <th style="width:6ex">Course</th>
                                           <th>Name</th>
                                           <th>Date</th>
                                           <th class="text-center">Description</th>
@@ -21,7 +21,7 @@
                                   <tbody>
                                     <%@assignments.each do |ass|%>
                                       <tr>
-                                          <td><%=ass.course_id%></td>
+                                          <td><%=ass.course_name%></td>
                                           <td><%=ass.name%></td>
                                           <td><%=ass.due_date%></td>
                                           <td class="text-center"><span class="label label-table label-success"><%=ass.description%></span></td>

@@ -1,9 +1,9 @@
 <div class="widget widget-scrolling">
 											<div class="widget-header">
 												<h3><%=@assignment.name%></h3>
-												<!-- <div class="widget-header-toolbar">
-													<div class="label label-info">NEW</div>
-												</div> -->
+												 <div class="widget-header-toolbar">
+													<a class="btn btn-xs btn-default add-tooltip" data-toggle="tooltip" href="<%=new_assignment_repository_path(@assignment.id)%>" data-original-title="Repository" data-container="body"><i class="fa fa-plus"></i></a>
+												</div>
 											</div>
 											<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 250px;"><div class="widget-content" style="overflow: hidden; width: auto; height: 410px;">
 												<label>Assignment description :</label>
@@ -36,11 +36,10 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: lightgray;
-    background: red; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#1B5282, #472E79); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#1B5282, #472E79); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#1B5282, #472E79); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#1B5282, #472E79); /* Standard syntax */
+    background: rgba(27, 82, 130, 0.77); /* For browsers that do not support gradients */
+    background: -o-linear-gradient(rgba(27, 82, 130, 0.77), rgba(145, 87, 222, 0.8)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(27, 82, 130, 0.77), rgba(145, 87, 222, 0.8)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(27, 82, 130, 0.77), rgba(145, 87, 222, 0.8)); /* Standard syntax */
 }
 .widget .widget-header h3 {
     display: inline-block;
@@ -55,7 +54,7 @@
     float: right;
     width: auto;
     height: 35px;
-    border-left: 1px solid #ddd;
+    margin-top: 12px;
     padding-left: 10px;
     margin-left: 10px;
 }
