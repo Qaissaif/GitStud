@@ -3,7 +3,7 @@ class BlobController < ApplicationController
 
 	def load_repository
 		if repo=Repository.where(:name=>params[:repository_id]).last
-			@repository=Gitlab::Git::Repository.new("repositories/#{repo.name}.git")
+			@repository=Gitlab::Git::Repository.new("/repositories/#{repo.name}.git")
 		end
 	end
 
