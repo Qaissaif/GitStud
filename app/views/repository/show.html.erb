@@ -1,8 +1,8 @@
 
 <% @tree.each do |x| %>
 <% if x.type==:blob %>
-<li> <a href="/assignment/asd/repository/<%= params[:id]%>/blob/<%=if params[:ref].nil? 'master' : params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
+<li> <a href="/assignment/asd/repository/<%= params[:id]%>/blob/<%=if params[:ref].nil? ? 'master' : params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
 <% else %>
-<li> <a href="/assignment/asd/repository/<%= params[:id]%>/tree/<%=if params[:ref].nil? 'master' : params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
+<li> <a href="/assignment/asd/repository/<%= params[:id]%>/tree/<%=if params[:ref].nil? ? 'master' : params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
 <% end %>
 <% end %>
