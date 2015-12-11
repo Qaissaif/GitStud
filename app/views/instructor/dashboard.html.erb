@@ -1,3 +1,4 @@
+<div class="col-md-12">
 <div class="panel">
                       <div class="panel-heading">
                           <div class="panel-control">
@@ -10,7 +11,9 @@
                           <div class="form-inline">
                               <div class="row">
                                   <div class="col-sm-6 table-toolbar-left">
-                                      <button id="demo-btn-addrow" class="btn btn-purple btn-labeled fa fa-plus"><a href="<%=new_assignment_path%>" style="color:#fff;">Add</a></button>
+                                    <a href="<%=new_assignment_path%>">
+                                      <button id="demo-btn-addrow" class="btn btn-purple btn-labeled fa fa-plus">Add</button>
+                                      </a>
                                   </div>
                                   
                               </div>
@@ -35,7 +38,7 @@
                                           <td class="text-center"><span class="label label-table label-success"><%=ass.description%></span></td>
                                           <td class="text-right">
                                               <a class="btn btn-xs btn-default add-tooltip" data-toggle="tooltip" href="<%=edit_assignment_path(:id=>ass.id)%>" data-original-title="Edit" data-container="body"><i class="fa fa-pencil"></i></a>
-                                              <a class="btn btn-xs btn-default add-tooltip" data-toggle="tooltip" href="<%=assignment_path(:id=>ass.id)%>" data-original-title="Edit" data-container="body" data-confirm="Are you sure?" data-method="delete"><i class="fa fa-trash"></i></a>
+                                              <a class="btn btn-xs btn-default add-tooltip" data-toggle="tooltip" href="<%=assignment_path(:id=>ass.id)%>" data-original-title="Delete" data-container="body" data-confirm="Are you sure?" data-method="delete"><i class="fa fa-trash"></i></a>
                                               
                                           </td>
                                       </tr>
@@ -44,4 +47,4 @@
                               </table>
                           </div>
                       </div>
-                  </div>  
+                  </div>  </div> 

@@ -1,0 +1,72 @@
+<div class="widget widget-scrolling">
+											<div class="widget-header">
+												<h3><%=@assignment.name%></h3>
+												<!-- <div class="widget-header-toolbar">
+													<div class="label label-info">NEW</div>
+												</div> -->
+											</div>
+											<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 250px;"><div class="widget-content" style="overflow: hidden; width: auto; height: 410px;">
+												<label>Assignment description :</label>
+												<p><%=@assignment.description%></p>
+												<label>Due date :</label>
+												<p><%=@assignment.due_date%></p>
+												<label>Team up-to :</label>
+												<p><%=@assignment.up_to%></p>
+												<label>Mark :</label>
+												<p><%=@assignment.mark%></p>
+												<label>Course name :</label>
+												<p><%=@assignment.course_name%></p>
+											</div><div class="slimScrollBar" style="width: 7px; position: absolute; border-radius: 7px; z-index: 99; right: 1px; top: 116px; height: 242.219px; display: none; opacity: 0.4; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+										</div>
+
+<style type="text/css">
+.widget {
+  border-color: #fac77c;
+}
+.widget {
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-color: lightgray;
+}
+.widget .widget-header {
+    padding: 0 10px;
+    height: 45px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: lightgray;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#1B5282, #472E79); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#1B5282, #472E79); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#1B5282, #472E79); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#1B5282, #472E79); /* Standard syntax */
+}
+.widget .widget-header h3 {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "latobold";
+    font-size: 25px;
+    margin: 0;
+    line-height: 35px;
+    float: left;
+}
+.widget .widget-header .widget-header-toolbar {
+    float: right;
+    width: auto;
+    height: 35px;
+    border-left: 1px solid #ddd;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+.widget .widget-header .widget-header-toolbar .label {
+    position: relative;
+    top: 8px;
+}
+.widget .widget-content {
+    padding: 20px 10px;
+    font-size: 16px;
+}
+
+
+</style>

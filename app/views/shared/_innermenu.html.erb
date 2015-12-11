@@ -12,8 +12,6 @@
                 <div class="navbar-collapse collapse">
                     <%if action_name!="sign"%>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Assignments</a></li>
-                        <li><a href="#">Repositories</a></li>
                         <%if @user %>
                             <%if @user.student_or_instructor_type=="Student"%>
                             <li><a href="<%=dashboard_student_index_path%>">Dashboard</a>

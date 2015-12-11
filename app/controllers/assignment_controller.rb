@@ -19,6 +19,7 @@ class AssignmentController < ApplicationController
 	end
 
 	def show
+		@assignment=Assignment.find(params[:id])
 	end
 
 	def edit

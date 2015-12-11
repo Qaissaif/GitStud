@@ -4,7 +4,7 @@ class TreeController < ApplicationController
 
 	def load_repository
 		 	if repo=Repository.where(:name=>params[:repository_id]).last
-				@repoistory=Gitlab::Git::Repository.new("repositories/#{repo.name}.git")
+				@repository=Gitlab::Git::Repository.new("repositories/#{repo.name}.git")
 			end
 	end
 	def show
@@ -12,7 +12,7 @@ class TreeController < ApplicationController
 		if path.nil?
 			path=""
 		end
-    @tree= Gitlab::Git::Tree.where(@repoistory,params[:ref],path)
+    @tree= Gitlab::Git::Tree.where(@repository,params[:ref],path)
 
 	end
 

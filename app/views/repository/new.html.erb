@@ -1,0 +1,40 @@
+
+<div class="text-center">
+  <h1 style="padding-bottom:23px;">create repository</h1>
+</div>
+
+<div class="Sign_Form col-lg-6 col-lg-offset-3 ">
+<%= form_for(@repository,:url=>assignment_repository_index_path(params[:assignment_id])) do |f|%>
+
+    <%= f.text_field :name,:class=>"form-control", :required=>"true", :placeholder=>"Name", :id=>"name" %>
+  <br />
+   <%= f.hidden_field :url,:class=>"form-control",:id=>"url"%>
+   <br />
+
+  <div class="actions text-center">
+    <div style="margin-top:20px;">
+    <%= f.submit :class => "btn btn-success" %>
+    <%= link_to "Cancel" ,request.referer, :class=>"btn btn-info",:style=>"    margin-left: 10px;" %>
+</div>
+  </div>
+<% end %>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  
+  $('#name').blur(function(){
+      var value= $(this).val();
+      var uri;
+      uri= value.replace(" ","");
+      uri= uri.replace(".","");
+      uri= uri.replace("/","");
+      uri= uri.replace(",","");
+      uri= uri.replace("'","");
+      uri= uri.replace("\"","");
+      uri= uri.replace("=","");
+      uri= uri.replace("?=","");
+      $('#url').val(uri);
+  });
+});
+</script>

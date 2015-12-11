@@ -1,0 +1,206 @@
+<%if action_name!="sign"%>
+<div class="col-lg-3">
+    <div class="row">
+      
+    <div class="side-menu  sidebar">
+     
+    <div class="side-menu-container">
+        <ul class="nav nav-stacked navbar-nav">
+        <li>
+            <%if @user %>
+            <%if @user.student_or_instructor_type=="Student"%>
+            <a href="<%=dashboard_student_index_path%>" title="Dashboard">
+                <%else%>
+            <a href="<%=dashboard_instructor_index_path%>" title="Dashboard">
+                <%end%>
+                <%end%>
+           <i class="fa fa-lg fa-fw fa-dashboard"></i> 
+           Dashboard
+        </a>
+        </li>
+
+        <li>
+        <a href="#" title="Users">
+            <i class="fa fa-lg fa-fw fa-list-alt"></i> 
+            Assignments
+        </a>   
+        </li>
+        <li>
+        <a href="#" title="Users">
+            <i class="fa fa-lg fa-fw fa-file-text-o"></i> 
+            Repositories
+        </a>   
+        </li>
+       <!-- Dropdown-->
+        <li id="dropdown">
+        <a data-toggle="collapse" href="#dropdown-lvl1">
+            <i class="fa fa-lg fa-fw fa-gear"></i>
+             Settings <span class="caret"></span>
+        </a>
+            <div id="dropdown-lvl1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="nav navbar-nav" id="inner">
+                    <li>
+                     <a href="#" title="Users">
+                     <i class="fa fa-lg fa-fw fa-pencil"></i> 
+                     Edit Info 
+                      </a>
+                    </li>
+
+                    <li>
+                    <a href="#" title="UI Elements">
+                    <i class="fa fa-lg fa-fw fa-edit"></i> 
+                    Edit Categories
+                    </a> 
+                    </li>
+                    <li>
+                    <a href="#" title="UI Elements">
+                    <i class="fa fa-lg fa-fw fa-envelope"></i> 
+                    Contact Info
+                    </a> 
+                    </li>
+                    <li>
+                    <a href="#" title="UI Elements">
+                    <i class="fa fa-lg fa-fw fa-picture-o"></i>
+                     Edit Logo
+                    </a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <a href="#" title="Forms">
+            <i class="fa fa-lg fa-fw fa-info-circle"></i>
+            How to use
+            </a>
+        </li>
+
+            </ul>
+    </div><!-- /.navbar-collapse -->
+
+    </div>
+</div></div>
+<%end%>
+        
+
+<script type="text/javascript">
+$(function () {
+    var url = window.location.href;
+    var activePage = url.substring(url.lastIndexOf('/') + 1);
+    if (activePage.indexOf("?page=")!=-1){
+        activePage = activePage.split('?page=')[0]
+    }
+    var flag=false;
+        $('.nav-stacked li a').each(function () {
+            var linkPage = this.href.substring(this.href.lastIndexOf('/') + 1); 
+            if (activePage == linkPage) { 
+              $(this).addClass('active');
+                
+            }
+
+        });
+        $('#inner li a').each(function () {
+            if ($(this).hasClass('active')) { 
+                $('#dropdown-lvl1').addClass('in');
+
+            }
+        });
+});     
+</script>
+
+
+<style type="text/css">
+.sidebar {
+    padding-left: 0;
+}
+
+.sidebar ul li a{
+  color: #95a5a6;
+  text-transform: capitalize;
+ }
+
+.sidebar ul li i{color: #95a5a6}
+
+.sidebar ul li a:hover{
+    background-color: #658AC8;
+    color: #fff;
+}
+.sidebar ul li a.active {
+    background-color: #658AC8;
+    color: #fff;
+}
+.sidebar ul li a:hover>i{color: #fff;}
+
+.sidebar ul li a.active>i{color: #fff;}
+
+
+.side-menu {
+    position: relative;
+    width: 100%;
+    height: 100%;
+     
+}
+
+
+.side-menu .navbar-nav li {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #e7e7e7;
+}
+.side-menu .navbar-nav li a {
+    padding: 15px;
+}
+
+.side-menu #dropdown {
+    border: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+.side-menu #dropdown .caret {
+    float: right;
+    margin: 9px 5px 0;
+}
+.side-menu #dropdown .indicator {
+    float: right;
+}
+.side-menu #dropdown > a {
+    border-bottom: 1px solid #e7e7e7;
+}
+.side-menu #dropdown .panel-body {
+    padding: 0;
+    background-color: #f3f3f3;
+}
+.side-menu #dropdown .panel-body .navbar-nav {
+    width: 100%;
+}
+.side-menu #dropdown .panel-body .navbar-nav li {
+    padding-left: 15px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.side-menu #dropdown .panel-body .navbar-nav li:last-child {
+    border-bottom: none;
+}
+.side-menu #dropdown .panel-body .panel > a {
+    margin-left: -20px;
+    padding-left: 35px;
+}
+.side-menu #dropdown .panel-body .panel-body {
+    margin-left: -15px;
+}
+.side-menu #dropdown .panel-body .panel-body li {
+    padding-left: 30px;
+}
+.side-menu #dropdown .panel-body .panel-body li:last-child {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+
+
+
+
+</style>
