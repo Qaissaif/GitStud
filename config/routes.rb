@@ -33,6 +33,9 @@ Gitstud::Application.routes.draw do
 
   resources :assignment do
       resources :repository do
+        member do
+        post :add_students
+      end
         get "/tree/:ref/*id" =>"tree#show"
         get "/tree/:ref" =>"tree#show"
         get "/commits/:ref/*id" =>"commits#index"
@@ -44,8 +47,8 @@ Gitstud::Application.routes.draw do
             constraints: { id: /.+/, format: false },
           )
       end
-    collection do
-      get :repositories
+    member do
+      get :assignment_repositories
     end
   end
 

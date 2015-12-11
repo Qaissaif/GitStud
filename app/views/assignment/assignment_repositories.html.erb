@@ -1,0 +1,15 @@
+
+ <table class="table table-hover">
+                                  <thead>
+                                      <tr>
+                                          <th>Repository Name</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <%@repositories.each do |repo|%>
+                                      <tr>
+                                          <td><%=repo.name%></td>
+                                      </tr>
+                                      <%end%>
+                                  </tbody>
+                              </table>

@@ -1,3 +1,23 @@
-<% @repositories.each do |rep| %>
- <a href="rep"><%=rep.name%></a>
-<% end %>
+<div class="panel-body">
+                          <div class="table-responsive">
+<table class="table table-hover">
+                                  <thead>
+                                      <tr>
+                                          <th>Repository Name</th>
+                                          <th>Assignment Name</th>
+                                          <th>due date</th>
+                                          <th>up to</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <% @repositories.each do |rep| %>
+                                      <tr>
+                                          <td><a href="<%=assignment_repository_path(:assignment_id=>rep.assignment.id,:id=>rep.name)%>"><%=rep.name%></a></td>
+                                          <td><%=rep.assignment.name%></td>
+                                          <td><%=rep.assignment.due_date%></td>
+                                          <td><%=rep.assignment.up_to%></td>
+                                      </tr>
+                                      <%end%>
+                                  </tbody>
+                              </table>
+                          </div></div>

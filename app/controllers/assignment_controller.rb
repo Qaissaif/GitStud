@@ -14,8 +14,8 @@ class AssignmentController < ApplicationController
 			@assignment=@current_instructor.assignments.create(params[:assignment])
 			if @assignment.save!
 			redirect_to dashboard_instructor_index_path,:flash => { :success => "Created assignment" }
+			end
 		end
-	end
 	end
 
 	def show
@@ -41,6 +41,11 @@ class AssignmentController < ApplicationController
 		assignment.destroy
     	flash[:alert]= "assignment was deleted"
     	redirect_to dashboard_instructor_index_path
+	end
+
+	def assignment_repositories
+		@assignment=Assignment.find(params[:id])
+		@repositories=@assignment.repositories
 	end
 
 end

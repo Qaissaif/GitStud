@@ -2758,19 +2758,7 @@ fieldset:not([disabled]) .has-error .form-radio.form-normal:not(.disabled):not(.
 }
 .canvas-responsive {
     max-width: 100%}
-a {
-    text-decoration: none;
-    color: #fff;
-    outline: 0;
-}
-a:hover, a:focus {
-    text-decoration: none;
-    color: #fff;
-    outline: 0 !important;
-}
-button, button:focus {
-    outline: 0 !important;
-}
+
 code {
     background-color: #e7e3f2;
     color: #f00;

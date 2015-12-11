@@ -37,9 +37,9 @@
                                           <td><%=ass.due_date%></td>
                                           <td class="text-center"><span class="label label-table label-success"><%=ass.description%></span></td>
                                           <td class="text-right">
+                                            <a class="btn btn-xs btn-default add-tooltip" data-toggle="tooltip" href="<%=assignment_repositories_assignment_path(:id=>ass.id)%>" data-original-title="Repositories" data-container="body"><i class="fa fa-file"></i></a>
                                               <a class="btn btn-xs btn-default add-tooltip" data-toggle="tooltip" href="<%=edit_assignment_path(:id=>ass.id)%>" data-original-title="Edit" data-container="body"><i class="fa fa-pencil"></i></a>
                                               <a class="btn btn-xs btn-default add-tooltip" data-toggle="tooltip" href="<%=assignment_path(:id=>ass.id)%>" data-original-title="Delete" data-container="body" data-confirm="Are you sure?" data-method="delete"><i class="fa fa-trash"></i></a>
-                                              
                                           </td>
                                       </tr>
                                       <%end%>

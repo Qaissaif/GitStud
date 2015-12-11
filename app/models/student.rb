@@ -4,5 +4,7 @@ class Student
       has_and_belongs_to_many :repositories
       has_and_belongs_to_many :instructors
       
-
+      def username
+      	user.username
+      end
 end

@@ -1,4 +1,4 @@
-
+<div class="col-md-4">
 <% @tree.each do |x| %>
 <% if x.type==:blob %>
 <li> <a href="/assignment/asd/repository/<%= params[:id]%>/blob/<%= params[:ref].nil? ? 'master' : params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
@@ -6,3 +6,20 @@
 <li> <a href="/assignment/asd/repository/<%= params[:id]%>/tree/<%= params[:ref].nil? ? 'master' : params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
 <% end %>
 <% end %>
+</div>
+
+<% if @assignment.up_to.to_i > @repo.students.count %>
+<div class="col-md-4 col-md-offset-8">
+	<%= form_for(Repository.new,:url=>add_students_assignment_repository_path(:assignment_id=>params[:assignment_id],:id=>params[:id])) do |f|%>
+
+	   <%= select_tag :student_ids,
+    options_from_collection_for_select(Student.where(:_id.ne=>@current_student.id,:repository_ids.nin=>[@repo.id]), :id, :username), :class => "chzn-select",:style=>"width:300px",:placeholder=>"awe", :id=>"signup-target-lang" ,:required=>true %>
+    	<%= f.submit 'go' ,:class=>"btn btn-block btn-success" %>
+	<% end %>
+</div>
+	<% end %>
+
+
+<script type="text/javascript">
+$(".chzn-select").chosen();
+</script>
