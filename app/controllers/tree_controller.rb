@@ -1,6 +1,6 @@
 class TreeController < ApplicationController
 	before_filter :load_repository , :only=>[:show]
-
+	layout "code_layout"
 
 	def load_repository
 		 	if repo=Repository.where(:name=>params[:repository_id]).last
