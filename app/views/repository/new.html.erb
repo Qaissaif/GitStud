@@ -1,9 +1,10 @@
 
-<div class="text-center">
+
+
+<div class="admin-form col-lg-6 col-lg-offset-3 ">
+  <div class="text-center">
   <h1 style="padding-bottom:23px;">create repository</h1>
 </div>
-
-<div class="Sign_Form col-lg-6 col-lg-offset-3 ">
 <%= form_for(@repository,:url=>assignment_repository_index_path(params[:assignment_id])) do |f|%>
 
     <%= f.text_field :name,:class=>"form-control", :required=>"true", :placeholder=>"Name", :id=>"name" %>
@@ -20,6 +21,17 @@
   </div>
 <% end %>
 </div>
+<style type="text/css">
+.admin-form {
+    line-height: 1.231;
+    font-weight: 400;
+    font-size: 14px;
+    padding-bottom: 40px;
+    padding-top: 28px;
+    color: #FFFFFF;
+    background-color: #48687D;
+}
+</style>
 
 <script type="text/javascript">
 $(document).ready(function(){
