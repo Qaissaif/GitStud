@@ -54,6 +54,10 @@ layout "inner_layout"
 	end
 
 	def destroy
+		repository=Repository.find(params[:id])
+		repository.destroy
+    	flash[:alert]= "repository was deleted"
+    	redirect_to redirect_to dashboard_student_index_path
 	end
 
 	

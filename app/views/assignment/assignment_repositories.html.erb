@@ -8,8 +8,11 @@
                                   <tbody>
                                     <%@repositories.each do |repo|%>
                                       <tr>
-                                          <td><%=repo.name%></td>
+                                        
+                                          <td><a href="<%=assignment_repository_path(:assignment_id=>repo.assignment.id,:id=>repo.name)%>"><%=repo.name%></a></td>
+                                        
                                       </tr>
+                                    
                                       <%end%>
                                   </tbody>
                               </table>

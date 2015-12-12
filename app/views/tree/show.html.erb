@@ -1,8 +1,43 @@
-
+<div class="col-md-8 col-md-offset-2">
+<div class="boxed-group editzone">
+		<h3>Repository Files</h3>
+	<div class="boxed-group-inner">
 <% @tree.each do |x| %>
 <% if x.type==:blob %>
-<li> <a href="/assignment/asd/repository/<%= params[:repository_id]%>/blob/<%= params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
+<li style="list-style-type:none;"> <i class="fa fa-file" style="color:#0dc0c0;padding-right:5px;"> </i> <a href="/assignment/asd/repository/<%= params[:repository_id]%>/blob/<%= params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
 <% else %>
-<li> <a href="/assignment/asd/repository/<%= params[:repository_id]%>/tree/<%= params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
+<li style="list-style-type:none;"> <i class="fa fa-folder" style="color:#0dc0c0;padding-right:5px;"> </i> <a href="/assignment/asd/repository/<%= params[:repository_id]%>/tree/<%= params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
 <% end %>
 <% end %>
+</div>
+</div>
+</div>
+
+<style type="text/css">
+.boxed-group {
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 30px}
+
+.boxed-group.editzone>h3 {
+  background-color: #f5f5f5;
+  border: 1px solid #d8d8d8;
+  color: #333;
+  padding: 9px 10px 10px;
+  font-size: 14px;
+  line-height: 17px;
+  text-shadow: none;}
+
+  .boxed-group-inner {
+  padding: 15px 10px;
+  background: #fff;
+  margin-top: -10px;
+  border: 1px solid #d8d8d8;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: #666;
+  font-size: 13px;
+  }
+
+
+</style>

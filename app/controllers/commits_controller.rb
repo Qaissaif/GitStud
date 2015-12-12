@@ -1,6 +1,6 @@
 class CommitsController < ApplicationController
 	before_filter :load_repository
-
+	layout "code_layout"
 
 	def load_repository
 		 	if repo=Repository.where(:name=>params[:repository_id]).last
@@ -21,7 +21,7 @@ class CommitsController < ApplicationController
 		commit_id=params[:id]
 		@commit=Gitlab::Git::Commit.find(@repository,commit_id)
 		@commit.diffs.each do |diff|
-			@html << "<div class='jumbotron' style='background-color:transparent;'>"+CodeRay.scan(diff.diff, :diff).html( :css => :class,:line_numbers =>:table)+"</div>"
+			@html << CodeRay.scan(diff.diff, :diff).div(:line_numbers=>:table,:css=>:class)
 		end
 	end
 
