@@ -38,7 +38,7 @@ Gitstud::Application.routes.draw do
       end
         get "/tree/:ref/*id" =>"tree#show"
         get "/tree/:ref" =>"tree#show"
-        get "/commits/:ref/*id" =>"commits#index"
+        get("/commits/:ref/*id",:to=>"commits#index",:constraints=>{ id: /.+/, format: false})
         get "/commits/:ref" =>"commits#index"
         get "/commit/:id" =>"commits#show"
                   get(

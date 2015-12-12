@@ -13,7 +13,13 @@ class CommitsController < ApplicationController
 		if path.nil?
 			path=""
 		end
-		@commits=@repository.find_commits({:ref=>params[:ref],:path=>path})
+		    options = {
+      repo: @repository,
+      ref: params[:ref],
+      path: path
+    }   
+    @commits = Gitlab::Git::Commit.where(options)
+	@assignment=Assignment.find(params[:assignment_id])
 	end
 
 	def show

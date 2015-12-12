@@ -8,6 +8,8 @@ class TreeController < ApplicationController
 			end
 	end
 	def show
+	@assignment=Assignment.find(params[:assignment_id])
+
 		path=params[:id]
 		if path.nil?
 			path=""

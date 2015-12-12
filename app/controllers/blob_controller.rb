@@ -11,6 +11,7 @@ class BlobController < ApplicationController
 	def show
   	path=params[:id]
     @blob= Gitlab::Git::Blob.find(@repository,params[:ref],path)
+    @path=@blob.path
     @html=CodeRay.scan(@blob.data, :ruby).div(:line_numbers => :table,:css=>:style)
 	end
 end

@@ -1,4 +1,10 @@
 <% @commits.each do |com| %>
 <br>
-	<a href= "/assignment/asd/repository/<%= params[:repository_id]%>/commit/<%= com.id %>">commit --</a>
+<a href= "/assignment/<%=@assignment.id%>/repository/<%= params[:repository_id]%>/commit/<%= com.id %>"><%=com.id%></a>
+	<a href= "/assignment/<%=@assignment.id%>/repository/<%= params[:repository_id]%>/commit/<%= com.id %>"><%=com.author_name%></a>
+	<a href= "/assignment/<%=@assignment.id%>/repository/<%= params[:repository_id]%>/commit/<%= com.id %>"><%=com.message%></a>
+	<a href= "/assignment/<%=@assignment.id%>/repository/<%= params[:repository_id]%>/commit/<%= com.id %>"><%=com.stats.additions%></a>
+	<a href= "/assignment/<%=@assignment.id%>/repository/<%= params[:repository_id]%>/commit/<%= com.id %>"><%=com.stats.deletions%></a>
+	<a href= "/assignment/<%=@assignment.id%>/repository/<%= params[:repository_id]%>/commit/<%= com.id %>"><%=com.date%></a>
+
 <% end %>

@@ -4,9 +4,9 @@
 	<div class="boxed-group-inner">
 <% @tree.each do |x| %>
 <% if x.type==:blob %>
-<li style="list-style-type:none;"> <i class="fa fa-file" style="color:#0dc0c0;padding-right:5px;"> </i> <a href="/assignment/asd/repository/<%= params[:repository_id]%>/blob/<%= params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
+<li style="list-style-type:none;"> <i class="fa fa-file" style="color:#0dc0c0;padding-right:5px;"> </i> <a href="/assignment/<%= @assignment.id %>/repository/<%= params[:repository_id]%>/blob/<%= params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
 <% else %>
-<li style="list-style-type:none;"> <i class="fa fa-folder" style="color:#0dc0c0;padding-right:5px;"> </i> <a href="/assignment/asd/repository/<%= params[:repository_id]%>/tree/<%= params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
+<li style="list-style-type:none;"> <i class="fa fa-folder" style="color:#0dc0c0;padding-right:5px;"> </i> <a href="/assignment/<%= @assignment.id %>/repository/<%= params[:repository_id]%>/tree/<%= params[:ref] rescue 'master' %>/<%= x.path %>"><%=x.name%></a></li>
 <% end %>
 <% end %>
 </div>

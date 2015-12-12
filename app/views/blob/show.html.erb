@@ -134,7 +134,9 @@ ol.CodeRay li { white-space: pre }
 </style>
 
 <div style="margin-top:20px;">
+	<a href="/assignment/<%= params[:assignment_id]%>/repository/<%= params[:repository_id]%>/commits/<%= params[:ref]%>/<%= @path %>" class="btn btn-success btn-block">History</a>
 <div class="source-column">
+
 <%= @html.html_safe %>
 </div>
 </div>
